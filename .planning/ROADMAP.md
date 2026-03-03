@@ -57,7 +57,10 @@ Plans:
   3. The week view lists all delivery dates for the current Monday–Sunday week in human-readable format
   4. The handwritten-style font (Caveat) applies to the dialect question/answer; the overall aesthetic feels warm and playful
   5. The layout is usable on a 375px mobile screen and respects the system dark mode preference
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 03-01-PLAN.md — Font setup (Caveat), delivery date utilities with tests, and translation keys
+- [ ] 03-02-PLAN.md — Main page assembly with delivery status, dialect display, week view, and visual styling
 
 ### Phase 4: Postal Code UX + Deployment
 **Goal**: A first-time visitor is prompted for geolocation and gets their answer immediately; a returning visitor sees their last postal code automatically; any user can search, change, or re-verify their postal code — and the app is live on Vercel
