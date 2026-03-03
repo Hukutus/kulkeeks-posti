@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: "2026-03-03T14:05:01.828Z"
+status: in-progress
+last_updated: "2026-03-03T15:35:50Z"
 progress:
-  total_phases: 2
+  total_phases: 4
   completed_phases: 2
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 5
+  completed_plans: 4
 ---
 
 # Project State
@@ -18,37 +18,40 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-03)
 
 **Core value:** Instantly answer "Is Posti delivering mail today?" for the user's postal code — with a smile.
-**Current focus:** Phase 2 - API + i18n Foundation
+**Current focus:** Phase 3 - Core UI
 
 ## Current Position
 
-Phase: 2 of 4 (API + i18n Foundation)
-Plan: 2 of 2 in current phase
-Status: Phase 2 complete — all plans done
-Last activity: 2026-03-03 — Plan 02-02 complete
+Phase: 3 of 4 (Core UI)
+Plan: 1 of 2 in current phase (plan 01 complete)
+Status: Phase 3 in progress — plan 01 done, plan 02 pending
+Last activity: 2026-03-03 — Plan 03-01 complete
 
-Progress: [█████░░░░░] 50%
+Progress: [███████░░░] 62%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 4 min
-- Total execution time: 0.1 hours
+- Total plans completed: 4
+- Average duration: 3 min
+- Total execution time: 0.2 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-data-pipeline | 1 | 4 min | 4 min |
+| 02-api-i18n-foundation | 2 | 4 min | 4 min |
+| 03-core-ui | 1 | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 4 min
-- Trend: -
+- Last 5 plans: 4 min, 4 min, 2 min
+- Trend: improving
 
 *Updated after each plan completion*
 | Phase 01-data-pipeline P01 | 4 | 3 tasks | 10 files |
 | Phase 02-api-i18n-foundation P01 | 4 | 2 tasks | 4 files |
+| Phase 03-core-ui P01 | 2 | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -69,6 +72,9 @@ Recent decisions affecting current work:
 - [Phase 02-01]: Both cache guards required: export const dynamic = 'force-dynamic' + cache: 'no-store' on fetch — delivery dates change daily
 - [02-02]: middleware.ts must be in src/ (not project root) when using Next.js 15 with src/app/ layout — rootDir is computed as src/ and Next.js only searches that directory
 - [02-02]: @tailwindcss/postcss required for Tailwind v4 — was missing from package.json despite being referenced in postcss.config.mjs
+- [03-01]: Use @theme inline (not bare @theme) for font CSS variable mapping — bare @theme resolves at build time and loses the var() reference set by next/font at runtime
+- [03-01]: getTodayISO uses local date methods (getFullYear/getMonth/getDate), not toISOString() — prevents off-by-one errors in timezones
+- [03-01]: getCurrentWeekISO uses (dayOfWeek + 6) % 7 to convert JS Sunday=0 to Monday-indexed offset — handles Sunday correctly
 
 ### Pending Todos
 
@@ -81,5 +87,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Completed 02-api-i18n-foundation/02-02-PLAN.md
+Stopped at: Completed 03-core-ui/03-01-PLAN.md
 Resume file: None

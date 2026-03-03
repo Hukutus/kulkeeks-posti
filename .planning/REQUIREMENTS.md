@@ -13,7 +13,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **DISP-02**: YES answer displays in green, NO answer displays in red
 - [ ] **DISP-03**: User sees a random Finnish dialect version of the question and answer on each page load (from content.json)
 - [ ] **DISP-04**: User sees the dialect name and region displayed alongside the question/answer
-- [ ] **DISP-05**: User sees all delivery dates for the current week in a human-readable list
+- [x] **DISP-05**: User sees all delivery dates for the current week in a human-readable list
 
 ### Postal Code Resolution
 
@@ -46,7 +46,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Visual Design
 
-- [ ] **VIS-01**: App uses a handwritten-style font for the main question/answer display
+- [x] **VIS-01**: App uses a handwritten-style font for the main question/answer display
 - [ ] **VIS-02**: App has a playful, warm visual aesthetic matching the dialect humor
 - [ ] **VIS-03**: App is fully responsive and mobile-friendly
 - [ ] **VIS-04**: App respects system dark mode preference via CSS prefers-color-scheme
@@ -83,7 +83,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DISP-02 | Phase 3 | Pending |
 | DISP-03 | Phase 3 | Pending |
 | DISP-04 | Phase 3 | Pending |
-| DISP-05 | Phase 3 | Pending |
+| DISP-05 | Phase 3 | Complete |
 | POST-01 | Phase 4 | Pending |
 | POST-02 | Phase 4 | Pending |
 | POST-03 | Phase 4 | Pending |
@@ -101,7 +101,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DATA-04 | Phase 1 | Complete |
 | API-01 | Phase 2 | Complete |
 | API-02 | Phase 2 | Complete |
-| VIS-01 | Phase 3 | Pending |
+| VIS-01 | Phase 3 | Complete |
 | VIS-02 | Phase 3 | Pending |
 | VIS-03 | Phase 3 | Pending |
 | VIS-04 | Phase 3 | Pending |
