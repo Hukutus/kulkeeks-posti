@@ -36,6 +36,7 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
   )
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true)
     setError(null)
     setDeliveryData(null)
