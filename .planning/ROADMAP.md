@@ -42,7 +42,10 @@ Plans:
   3. The Route Handler at `/api/delivery?postalCode=00100` returns delivery dates without CORS errors
   4. The Route Handler returns a structured error response (not a 500) when the Posti API is unavailable
   5. Dialect content renders in Finnish regardless of which locale is active
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 02-01-PLAN.md — Posti API proxy Route Handler with Zod validation and typed lib wrapper
+- [ ] 02-02-PLAN.md — next-intl locale routing scaffold (fi, en, sv) with middleware and translation files
 
 ### Phase 3: Core UI
 **Goal**: A visitor with a known postal code sees a clear YES/NO delivery answer in green/red, a random Finnish dialect question/answer, the full week's delivery dates, and a polished visual design — all on a single page load
@@ -77,6 +80,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Data Pipeline | 0/1 | Planned | - |
-| 2. API + i18n Foundation | 0/? | Not started | - |
+| 2. API + i18n Foundation | 0/2 | Planned | - |
 | 3. Core UI | 0/? | Not started | - |
 | 4. Postal Code UX + Deployment | 0/? | Not started | - |
