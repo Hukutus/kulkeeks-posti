@@ -1,10 +1,10 @@
 {
-  "title": "Kulkeeko Posti? Kyllä / Ei — Finnish Dialects",
+  "title": "Kulkeeko posti? Kyllä / Ei — Finnish Dialects",
   "dialects": [
     {
       "dialect": "Yleiskieli (kirjakieli)",
       "region": "Koko Suomi",
-      "question": "Kulkeeko Posti?",
+      "question": "Kulkeeko posti?",
       "yes": "Kyllä",
       "no": "Ei",
       "comment": null
@@ -88,6 +88,30 @@
       "yes": "Ja",
       "no": "Nej",
       "comment": "Lyhyt, tyylikäs, ja sanotaan purjeveneen kannelta. Tai Stockmannin kahvilassa."
+    },
+    {
+      "dialect": "Pohjoissaame (Davvisámegiella)",
+      "region": "Utsjoki, Enontekiö, Inari, Sodankylä — Sápmi",
+      "question": "Manná go poasta?",
+      "yes": "De",
+      "no": "Ii",
+      "comment": "Alkuperäiskansa joka oli täällä ennen postia, ennen murteita ja ennen kuin kukaan ehti kysyä kulkeeko mikään."
+    },
+    {
+      "dialect": "Kainuun murre",
+      "region": "Kainuu",
+      "question": "Kulukkooko posti?",
+      "yes": "Joo",
+      "no": "Eipä",
+      "comment": "Kainuussa posti kulkee, mutta kaikki muu lähti Ouluun tai Helsinkiin."
+    },
+    {
+      "dialect": "Finglish (suomenamerikkalainen)",
+      "region": "Minnesota, Michigan, historiallinen siirtolaisyhteisö",
+      "question": "Kulkeeko maili?",
+      "yes": "Juu",
+      "no": "Noo",
+      "comment": "Kun isoisä lähti Amerikkaan, kieli lähti mukaan mutta jäi jumiin vuoteen 1910."
     }
   ]
 }
