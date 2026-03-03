@@ -67,9 +67,10 @@ None.
 | 3 | Fix theme resetting to light when changing locale | 2026-03-03 | ab00433 | [3-fix-theme-resetting-to-light-when-changi](./quick/3-fix-theme-resetting-to-light-when-changi/) |
 | 4 | Add Northern Sami language support | 2026-03-03 | 20a31d9 | [4-add-northern-sami-language-support](./quick/4-add-northern-sami-language-support/) |
 | 5 | Make the page WCAG 2.2 AA accessible | 2026-03-03 | 8291b06 | [5-make-the-page-wcag-2-2-aa-accessible](./quick/5-make-the-page-wcag-2-2-aa-accessible/) |
+| 6 | Fix page flash on language change and add system theme | 2026-03-03 | a1d602f | [6-fix-page-flash-on-language-change-and-ad](./quick/6-fix-page-flash-on-language-change-and-ad/) |
 
 ## Session Continuity
 
-Last activity: 2026-03-03 - Completed quick task 5: Make the page WCAG 2.2 AA accessible
-Stopped at: Quick task 5 complete
+Last activity: 2026-03-03 - Completed quick task 6: Fix page flash on language change and add system theme
+Stopped at: Quick task 6 complete
 Resume file: None
