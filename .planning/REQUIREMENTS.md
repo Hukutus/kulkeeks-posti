@@ -34,10 +34,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Data Pipeline
 
-- [ ] **DATA-01**: Build-time script parses Statistics Finland XLSX and outputs postal codes JSON
-- [ ] **DATA-02**: Script extracts: postal_code, postal_area_name (fi), postal_area_name_sv, municipality_name
-- [ ] **DATA-03**: Script dynamically uses the current year in the XLSX download URL
-- [ ] **DATA-04**: Swedish municipality names are sourced and included in the postal codes dataset
+- [x] **DATA-01**: Build-time script parses Statistics Finland XLSX and outputs postal codes JSON
+- [x] **DATA-02**: Script extracts: postal_code, postal_area_name (fi), postal_area_name_sv, municipality_name
+- [x] **DATA-03**: Script dynamically uses the current year in the XLSX download URL
+- [x] **DATA-04**: Swedish municipality names are sourced and included in the postal codes dataset
 
 ### API Integration
 
@@ -95,10 +95,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | I18N-03 | Phase 2 | Pending |
 | I18N-04 | Phase 2 | Pending |
 | I18N-05 | Phase 2 | Pending |
-| DATA-01 | Phase 1 | Pending |
-| DATA-02 | Phase 1 | Pending |
-| DATA-03 | Phase 1 | Pending |
-| DATA-04 | Phase 1 | Pending |
+| DATA-01 | Phase 1 | Complete |
+| DATA-02 | Phase 1 | Complete |
+| DATA-03 | Phase 1 | Complete |
+| DATA-04 | Phase 1 | Complete |
 | API-01 | Phase 2 | Pending |
 | API-02 | Phase 2 | Pending |
 | VIS-01 | Phase 3 | Pending |
