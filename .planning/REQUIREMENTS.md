@@ -9,10 +9,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Core Display
 
-- [ ] **DISP-01**: User sees a clear YES or NO answer for whether Posti delivers mail today at their postal code
-- [ ] **DISP-02**: YES answer displays in green, NO answer displays in red
-- [ ] **DISP-03**: User sees a random Finnish dialect version of the question and answer on each page load (from content.json)
-- [ ] **DISP-04**: User sees the dialect name and region displayed alongside the question/answer
+- [x] **DISP-01**: User sees a clear YES or NO answer for whether Posti delivers mail today at their postal code
+- [x] **DISP-02**: YES answer displays in green, NO answer displays in red
+- [x] **DISP-03**: User sees a random Finnish dialect version of the question and answer on each page load (from content.json)
+- [x] **DISP-04**: User sees the dialect name and region displayed alongside the question/answer
 - [x] **DISP-05**: User sees all delivery dates for the current week in a human-readable list
 
 ### Postal Code Resolution
@@ -47,9 +47,9 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Visual Design
 
 - [x] **VIS-01**: App uses a handwritten-style font for the main question/answer display
-- [ ] **VIS-02**: App has a playful, warm visual aesthetic matching the dialect humor
-- [ ] **VIS-03**: App is fully responsive and mobile-friendly
-- [ ] **VIS-04**: App respects system dark mode preference via CSS prefers-color-scheme
+- [x] **VIS-02**: App has a playful, warm visual aesthetic matching the dialect humor
+- [x] **VIS-03**: App is fully responsive and mobile-friendly
+- [x] **VIS-04**: App respects system dark mode preference via CSS prefers-color-scheme
 
 ## v2 Requirements
 
@@ -79,10 +79,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DISP-01 | Phase 3 | Pending |
-| DISP-02 | Phase 3 | Pending |
-| DISP-03 | Phase 3 | Pending |
-| DISP-04 | Phase 3 | Pending |
+| DISP-01 | Phase 3 | Complete |
+| DISP-02 | Phase 3 | Complete |
+| DISP-03 | Phase 3 | Complete |
+| DISP-04 | Phase 3 | Complete |
 | DISP-05 | Phase 3 | Complete |
 | POST-01 | Phase 4 | Pending |
 | POST-02 | Phase 4 | Pending |
@@ -102,9 +102,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | API-01 | Phase 2 | Complete |
 | API-02 | Phase 2 | Complete |
 | VIS-01 | Phase 3 | Complete |
-| VIS-02 | Phase 3 | Pending |
-| VIS-03 | Phase 3 | Pending |
-| VIS-04 | Phase 3 | Pending |
+| VIS-02 | Phase 3 | Complete |
+| VIS-03 | Phase 3 | Complete |
+| VIS-04 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 26 total
@@ -113,4 +113,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-03*
-*Last updated: 2026-03-03 after roadmap creation*
+*Last updated: 2026-03-03 after Phase 3 completion (03-02)*

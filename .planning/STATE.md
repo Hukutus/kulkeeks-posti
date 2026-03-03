@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in-progress
-last_updated: "2026-03-03T15:35:50Z"
+last_updated: "2026-03-03T16:00:00Z"
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 5
-  completed_plans: 4
+  completed_plans: 5
 ---
 
 # Project State
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-03)
 ## Current Position
 
 Phase: 3 of 4 (Core UI)
-Plan: 1 of 2 in current phase (plan 01 complete)
-Status: Phase 3 in progress — plan 01 done, plan 02 pending
-Last activity: 2026-03-03 — Plan 03-01 complete
+Plan: 2 of 2 in current phase (plan 02 complete — phase 3 done)
+Status: Phase 3 complete — all plans done, Phase 4 pending
+Last activity: 2026-03-03 — Plan 03-02 complete
 
-Progress: [███████░░░] 62%
+Progress: [████████░░] 75%
 
 ## Performance Metrics
 
@@ -42,7 +42,7 @@ Progress: [███████░░░] 62%
 |-------|-------|-------|----------|
 | 01-data-pipeline | 1 | 4 min | 4 min |
 | 02-api-i18n-foundation | 2 | 4 min | 4 min |
-| 03-core-ui | 1 | 2 min | 2 min |
+| 03-core-ui | 2 | 17 min | 8 min |
 
 **Recent Trend:**
 - Last 5 plans: 4 min, 4 min, 2 min
@@ -52,6 +52,7 @@ Progress: [███████░░░] 62%
 | Phase 01-data-pipeline P01 | 4 | 3 tasks | 10 files |
 | Phase 02-api-i18n-foundation P01 | 4 | 2 tasks | 4 files |
 | Phase 03-core-ui P01 | 2 | 2 tasks | 7 files |
+| Phase 03-core-ui P02 | 15 | 1 task | 2 files |
 
 ## Accumulated Context
 
@@ -75,6 +76,9 @@ Recent decisions affecting current work:
 - [03-01]: Use @theme inline (not bare @theme) for font CSS variable mapping — bare @theme resolves at build time and loses the var() reference set by next/font at runtime
 - [03-01]: getTodayISO uses local date methods (getFullYear/getMonth/getDate), not toISOString() — prevents off-by-one errors in timezones
 - [03-01]: getCurrentWeekISO uses (dayOfWeek + 6) % 7 to convert JS Sunday=0 to Monday-indexed offset — handles Sunday correctly
+- [03-02]: Removed dialect name/region display from main UI — answer is the focus, metadata added visual clutter
+- [03-02]: whitespace-nowrap on answer text prevents large YES/NO from wrapping on 375px viewport
+- [03-02]: await connection() before Math.random() forces per-request rendering for dialect randomness
 
 ### Pending Todos
 
@@ -87,5 +91,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Completed 03-core-ui/03-01-PLAN.md
+Stopped at: Completed 03-core-ui/03-02-PLAN.md
 Resume file: None

@@ -12,9 +12,9 @@ Build a focused Next.js utility that instantly answers "Does Posti deliver mail 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Data Pipeline** - Build-time script that converts Statistics Finland XLSX into the postal codes JSON that powers autocomplete
-- [ ] **Phase 2: API + i18n Foundation** - Posti API proxy route with Zod validation and next-intl locale routing scaffold
-- [ ] **Phase 3: Core UI** - Main page assembling delivery status, week view, and dialect display with visual design
+- [x] **Phase 1: Data Pipeline** - Build-time script that converts Statistics Finland XLSX into the postal codes JSON that powers autocomplete
+- [x] **Phase 2: API + i18n Foundation** - Posti API proxy route with Zod validation and next-intl locale routing scaffold
+- [x] **Phase 3: Core UI** - Main page assembling delivery status, week view, and dialect display with visual design
 - [ ] **Phase 4: Postal Code UX + Deployment** - Interactive postal code selector (geolocation, autocomplete, persistence) and Vercel production deployment
 
 ## Phase Details
@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. Swedish municipality names are present and non-empty in the output (not blank group headers)
 **Plans**: 1 plan
 Plans:
-- [ ] 01-01-PLAN.md — Initialize Next.js project, create postal code generation script, run and validate output
+- [x] 01-01-PLAN.md — Initialize Next.js project, create postal code generation script, run and validate output
 
 ### Phase 2: API + i18n Foundation
 **Goal**: The app can fetch and return Posti delivery dates server-side without CORS issues, validated against a known schema, and all UI strings can be rendered in Finnish, English, or Swedish via locale-aware routing
@@ -44,8 +44,8 @@ Plans:
   5. Dialect content renders in Finnish regardless of which locale is active
 **Plans**: 2 plans
 Plans:
-- [ ] 02-01-PLAN.md — Posti API proxy Route Handler with Zod validation and typed lib wrapper
-- [ ] 02-02-PLAN.md — next-intl locale routing scaffold (fi, en, sv) with middleware and translation files
+- [x] 02-01-PLAN.md — Posti API proxy Route Handler with Zod validation and typed lib wrapper
+- [x] 02-02-PLAN.md — next-intl locale routing scaffold (fi, en, sv) with middleware and translation files
 
 ### Phase 3: Core UI
 **Goal**: A visitor with a known postal code sees a clear YES/NO delivery answer in green/red, a random Finnish dialect question/answer, the full week's delivery dates, and a polished visual design — all on a single page load
@@ -59,8 +59,8 @@ Plans:
   5. The layout is usable on a 375px mobile screen and respects the system dark mode preference
 **Plans**: 2 plans
 Plans:
-- [ ] 03-01-PLAN.md — Font setup (Caveat), delivery date utilities with tests, and translation keys
-- [ ] 03-02-PLAN.md — Main page assembly with delivery status, dialect display, week view, and visual styling
+- [x] 03-01-PLAN.md — Font setup (Caveat), delivery date utilities with tests, and translation keys
+- [x] 03-02-PLAN.md — Main page assembly with delivery status, dialect display, week view, and visual styling
 
 ### Phase 4: Postal Code UX + Deployment
 **Goal**: A first-time visitor is prompted for geolocation and gets their answer immediately; a returning visitor sees their last postal code automatically; any user can search, change, or re-verify their postal code — and the app is live on Vercel
@@ -82,7 +82,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Data Pipeline | 0/1 | Planned | - |
-| 2. API + i18n Foundation | 1/2 | In Progress|  |
-| 3. Core UI | 0/? | Not started | - |
-| 4. Postal Code UX + Deployment | 0/? | Not started | - |
+| 1. Data Pipeline | 1/1 | Complete | 2026-03-03 |
+| 2. API + i18n Foundation | 2/2 | Complete | 2026-03-03 |
+| 3. Core UI | 2/2 | Complete | 2026-03-03 |
+| 4. Postal Code UX + Deployment | 0/TBD | Not started | - |
