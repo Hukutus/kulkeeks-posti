@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
+import ThemeSync from '@/components/ThemeSync'
 import './globals.css'
 
 const caveat = Caveat({ variable: '--font-caveat', subsets: ['latin'], display: 'swap' })
@@ -41,6 +42,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} className={`${caveat.variable} bg-stone-50 dark:bg-stone-950`} suppressHydrationWarning>
       <body className="bg-stone-50 dark:bg-stone-950 min-h-dvh">
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('posti-days:theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();` }} />
+        <ThemeSync />
         <NextIntlClientProvider>
           {children}
         </NextIntlClientProvider>
