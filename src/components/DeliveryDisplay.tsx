@@ -70,7 +70,7 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
         <p className="font-handwriting text-3xl sm:text-4xl text-stone-700 dark:text-stone-300 leading-relaxed">
           {dialect.question}
         </p>
-        <p className="font-handwriting text-7xl sm:text-8xl font-bold mt-6 mb-4 text-stone-300 dark:text-stone-700 animate-pulse whitespace-nowrap">
+        <p className="font-handwriting text-5xl sm:text-6xl font-bold mt-6 mb-4 text-stone-300 dark:text-stone-700 animate-pulse">
           ...
         </p>
       </div>
@@ -116,7 +116,7 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
       </p>
 
       {/* Main answer — largest element, primary information */}
-      <p className={`font-handwriting text-7xl sm:text-8xl font-bold mt-6 mb-4 whitespace-nowrap ${answerColor}`}>
+      <p className={`font-handwriting text-5xl sm:text-6xl font-bold mt-6 mb-4 ${answerColor}`}>
         {deliveryToday ? dialect.yes : dialect.no}
       </p>
 
