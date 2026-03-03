@@ -67,61 +67,51 @@ export default async function Home({ params }: Props) {
         </p>
 
         {/* Main answer — largest element, primary information */}
-        <p className={`font-handwriting text-7xl sm:text-8xl font-bold mt-4 ${answerColor}`}>
+        <p className={`font-handwriting text-7xl sm:text-8xl font-bold mt-6 mb-4 whitespace-nowrap ${answerColor}`}>
           {deliveryToday ? dialect.yes : dialect.no}
         </p>
 
-        {/* Dialect metadata */}
-        <p className="text-stone-500 dark:text-stone-400 text-sm mt-3 italic">
-          {dialect.dialect} — {dialect.region}
-        </p>
-
-        {/* Week view card */}
-        <div className="mt-10 w-full bg-white dark:bg-stone-900 rounded-2xl p-5 shadow-sm border border-stone-200 dark:border-stone-800">
-          <h2 className="text-lg font-semibold text-stone-700 dark:text-stone-300 mb-3">
+        {/* Week view — compact secondary info */}
+        <div className="mt-14 w-full bg-white/60 dark:bg-stone-900/60 rounded-xl px-4 py-3 border border-stone-200 dark:border-stone-800">
+          <h2 className="text-xs font-medium uppercase tracking-wide text-stone-400 dark:text-stone-500 mb-2">
             {t('weekTitle')}
           </h2>
-          <ul className="space-y-0.5">
+          <ul className="space-y-0">
             {weekISO.map((iso) => {
               const isDelivery = weekDeliverySet.has(iso)
               const isToday = iso === todayISO
               const dateLabel = format.dateTime(new Date(iso + 'T12:00:00'), {
-                weekday: 'long',
-                month: 'long',
+                weekday: 'short',
                 day: 'numeric',
+                month: 'numeric',
               })
 
               return (
                 <li
                   key={iso}
-                  className={`flex items-center gap-3 py-2 px-2 rounded-lg ${
+                  className={`flex items-center gap-2 py-1 px-1.5 rounded ${
                     isToday ? 'bg-stone-100 dark:bg-stone-800' : ''
                   }`}
                 >
-                  {/* Delivery indicator */}
                   <span
-                    className={`shrink-0 w-2 h-2 rounded-full ${
+                    className={`shrink-0 w-1.5 h-1.5 rounded-full ${
                       isDelivery
                         ? 'bg-green-500 dark:bg-green-400'
                         : 'bg-stone-300 dark:bg-stone-600'
                     }`}
                     aria-hidden="true"
                   />
-
-                  {/* Date label */}
                   <span
-                    className={`flex-1 text-left text-sm capitalize ${
+                    className={`flex-1 text-left text-xs capitalize ${
                       isDelivery
-                        ? 'text-green-700 dark:text-green-300'
+                        ? 'text-stone-600 dark:text-stone-300'
                         : 'text-stone-400 dark:text-stone-500'
                     }`}
                   >
                     {dateLabel}
                   </span>
-
-                  {/* Today badge */}
                   {isToday && (
-                    <span className="text-xs text-stone-500 dark:text-stone-400 font-medium shrink-0">
+                    <span className="text-[10px] text-stone-400 dark:text-stone-500 font-medium shrink-0">
                       {t('today')}
                     </span>
                   )}

@@ -3,14 +3,14 @@
     "loading": "Ladataan...",
     "error": "Virhe",
     "title": "Posti Days",
-    "description": "Jakaako Posti postia tanaan?"
+    "description": "Jakaako Posti postia tänään?"
   },
   "Delivery": {
     "errorTitle": "Jakelua ei voitu tarkistaa",
-    "weekTitle": "Tama viikko",
+    "weekTitle": "Tämä viikko",
     "postalCode": "Postinumero",
-    "yes": "Kylla",
+    "yes": "Kyllä",
     "no": "Ei",
-    "today": "Tanaan"
+    "today": "Tänään"
   }
 }
