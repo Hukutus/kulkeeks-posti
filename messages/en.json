@@ -12,5 +12,15 @@
     "yes": "Yes",
     "no": "No",
     "today": "Today"
+  },
+  "PostalCode": {
+    "allowLocation": "Allow location access to find your postal code",
+    "locationDenied": "Location access was denied",
+    "locationError": "Could not determine location",
+    "tryAgain": "Try again",
+    "enterPostalCode": "Enter postal code",
+    "searchPlaceholder": "Postal code or area name...",
+    "changeCode": "Change postal code",
+    "submit": "Go"
   }
 }
