@@ -63,8 +63,6 @@ export default function SettingsBar() {
   }, [])
 
   function switchLocale(newLocale: Locale) {
-    const isDark = document.documentElement.classList.contains('dark')
-    document.documentElement.style.backgroundColor = isDark ? '#0c0a09' : '#fafaf9'
     startTransition(() => {
       router.replace(pathname, { locale: newLocale })
     })
