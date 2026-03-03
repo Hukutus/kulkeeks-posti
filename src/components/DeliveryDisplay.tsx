@@ -9,6 +9,7 @@ import {
   isDeliveryDay,
 } from '@/lib/delivery-utils'
 import content from '../../content.json'
+import SettingsBar from '@/components/SettingsBar'
 
 type Dialect = (typeof content.dialects)[number]
 
@@ -179,6 +180,11 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
         >
           {tPostal('changeCode')}
         </button>
+      </div>
+
+      {/* Settings — language & theme */}
+      <div className="mt-2 flex justify-center">
+        <SettingsBar />
       </div>
     </div>
   )

@@ -40,6 +40,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} className={`${caveat.variable} bg-stone-50 dark:bg-stone-950`} suppressHydrationWarning>
       <body className="bg-stone-50 dark:bg-stone-950 min-h-dvh">
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('posti-days:theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();` }} />
         <NextIntlClientProvider>
           {children}
         </NextIntlClientProvider>
