@@ -80,6 +80,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Data Pipeline | 0/1 | Planned | - |
-| 2. API + i18n Foundation | 0/2 | Planned | - |
+| 2. API + i18n Foundation | 1/2 | In Progress|  |
 | 3. Core UI | 0/? | Not started | - |
 | 4. Postal Code UX + Deployment | 0/? | Not started | - |

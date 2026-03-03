@@ -41,8 +41,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### API Integration
 
-- [ ] **API-01**: App queries Posti mail delivery API server-side (proxied via Route Handler to avoid CORS)
-- [ ] **API-02**: App displays a clear error message when Posti API is unavailable or returns an error
+- [x] **API-01**: App queries Posti mail delivery API server-side (proxied via Route Handler to avoid CORS)
+- [x] **API-02**: App displays a clear error message when Posti API is unavailable or returns an error
 
 ### Visual Design
 
@@ -99,8 +99,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DATA-02 | Phase 1 | Complete |
 | DATA-03 | Phase 1 | Complete |
 | DATA-04 | Phase 1 | Complete |
-| API-01 | Phase 2 | Pending |
-| API-02 | Phase 2 | Pending |
+| API-01 | Phase 2 | Complete |
+| API-02 | Phase 2 | Complete |
 | VIS-01 | Phase 3 | Pending |
 | VIS-02 | Phase 3 | Pending |
 | VIS-03 | Phase 3 | Pending |

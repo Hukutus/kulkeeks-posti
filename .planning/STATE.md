@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-03T12:40:21.167Z"
+last_updated: "2026-03-03T13:53:01.787Z"
 progress:
-  total_phases: 1
+  total_phases: 2
   completed_phases: 1
-  total_plans: 1
-  completed_plans: 1
+  total_plans: 3
+  completed_plans: 2
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-03)
 
 **Core value:** Instantly answer "Is Posti delivering mail today?" for the user's postal code — with a smile.
-**Current focus:** Phase 1 - Data Pipeline
+**Current focus:** Phase 2 - API + i18n Foundation
 
 ## Current Position
 
-Phase: 1 of 4 (Data Pipeline)
-Plan: 1 of 1 in current phase
-Status: Phase 1 complete
-Last activity: 2026-03-03 — Plan 01-01 complete
+Phase: 2 of 4 (API + i18n Foundation)
+Plan: 1 of 2 in current phase
+Status: Phase 2 in progress — Plan 02-01 complete
+Last activity: 2026-03-03 — Plan 02-01 complete
 
-Progress: [██░░░░░░░░] 25%
+Progress: [███░░░░░░░] 37%
 
 ## Performance Metrics
 
@@ -48,6 +48,7 @@ Progress: [██░░░░░░░░] 25%
 
 *Updated after each plan completion*
 | Phase 01-data-pipeline P01 | 4 | 3 tasks | 10 files |
+| Phase 02-api-i18n-foundation P01 | 4 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -63,6 +64,9 @@ Recent decisions affecting current work:
 - [01-01]: Use workbook.worksheets[0] (index) not sheet name — sheet name changed between 2025 XLSX and 2026 XLSX
 - [01-01]: Commit public/data/postal-codes.json to repo — CI/Vercel builds do not need external API at deploy time
 - [01-01]: Pad municipality codes to 3 digits before map lookup — ExcelJS may return numeric 91 instead of string "091"
+- [Phase 02-01]: Posti API returns [] for P.O. Box codes — empty array check after safeParse handles this cleanly
+- [Phase 02-01]: Route Handler imports DeliverySchema from @/lib/get-delivery-dates — single source of truth for Posti response shape
+- [Phase 02-01]: Both cache guards required: export const dynamic = 'force-dynamic' + cache: 'no-store' on fetch — delivery dates change daily
 
 ### Pending Todos
 
@@ -75,5 +79,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Completed 01-data-pipeline/01-01-PLAN.md
+Stopped at: Completed 02-api-i18n-foundation/02-01-PLAN.md
 Resume file: None
