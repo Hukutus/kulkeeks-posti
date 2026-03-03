@@ -20,6 +20,7 @@
     "tryAgain": "Try again",
     "enterPostalCode": "Enter postal code",
     "searchPlaceholder": "Postal code or area name...",
+    "searchManually": "Or search manually",
     "changeCode": "Change postal code",
     "submit": "Go"
   }

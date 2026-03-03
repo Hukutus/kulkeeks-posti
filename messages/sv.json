@@ -20,6 +20,7 @@
     "tryAgain": "Försök igen",
     "enterPostalCode": "Ange postnummer",
     "searchPlaceholder": "Postnummer eller område...",
+    "searchManually": "Eller sök manuellt",
     "changeCode": "Byt postnummer",
     "submit": "Sök"
   }

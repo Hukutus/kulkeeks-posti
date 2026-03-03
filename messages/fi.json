@@ -20,6 +20,7 @@
     "tryAgain": "Yritä uudelleen",
     "enterPostalCode": "Syötä postinumero",
     "searchPlaceholder": "Postinumero tai alue...",
+    "searchManually": "Tai hae manuaalisesti",
     "changeCode": "Vaihda postinumeroa",
     "submit": "Hae"
   }
