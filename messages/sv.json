@@ -12,5 +12,15 @@
     "yes": "Ja",
     "no": "Nej",
     "today": "Idag"
+  },
+  "PostalCode": {
+    "allowLocation": "Tillåt platsåtkomst för att hitta ditt postnummer",
+    "locationDenied": "Platsåtkomst nekades",
+    "locationError": "Kunde inte bestämma plats",
+    "tryAgain": "Försök igen",
+    "enterPostalCode": "Ange postnummer",
+    "searchPlaceholder": "Postnummer eller område...",
+    "changeCode": "Byt postnummer",
+    "submit": "Sök"
   }
 }

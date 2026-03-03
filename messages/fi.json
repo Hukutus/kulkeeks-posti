@@ -12,5 +12,15 @@
     "yes": "Kyllä",
     "no": "Ei",
     "today": "Tänään"
+  },
+  "PostalCode": {
+    "allowLocation": "Salli sijainti postinumeron selvittämiseksi",
+    "locationDenied": "Sijainnin käyttö evättiin",
+    "locationError": "Sijaintia ei voitu määrittää",
+    "tryAgain": "Yritä uudelleen",
+    "enterPostalCode": "Syötä postinumero",
+    "searchPlaceholder": "Postinumero tai alue...",
+    "changeCode": "Vaihda postinumeroa",
+    "submit": "Hae"
   }
 }
