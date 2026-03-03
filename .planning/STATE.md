@@ -64,9 +64,10 @@ None.
 |---|-------------|------|--------|-----------|
 | 1 | Upgrade all dependencies to latest versions | 2026-03-03 | 04c55df | [1-upgrade-all-dependencies-to-latest-versi](./quick/1-upgrade-all-dependencies-to-latest-versi/) |
 | 2 | Fix iOS Safari white bars and add language/theme toggles | 2026-03-03 | 6328339 | [2-fix-ios-safari-white-bars-and-add-langua](./quick/2-fix-ios-safari-white-bars-and-add-langua/) |
+| 3 | Fix theme resetting to light when changing locale | 2026-03-03 | ab00433 | [3-fix-theme-resetting-to-light-when-changi](./quick/3-fix-theme-resetting-to-light-when-changi/) |
 
 ## Session Continuity
 
-Last activity: 2026-03-03 - Completed quick task 2: Fix iOS Safari white bars and add language/theme toggles
-Stopped at: Quick task 2 complete
+Last activity: 2026-03-03 - Completed quick task 3: Fix theme resetting to light when changing locale
+Stopped at: Quick task 3 complete
 Resume file: None
