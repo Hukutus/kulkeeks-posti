@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in-progress
-last_updated: "2026-03-03T16:27:29Z"
+last_updated: "2026-03-03T17:29:31Z"
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 8
-  completed_plans: 6
+  completed_plans: 7
 ---
 
 # Project State
@@ -23,18 +23,18 @@ See: .planning/PROJECT.md (updated 2026-03-03)
 ## Current Position
 
 Phase: 4 of 4 (Postal Code UX + Deployment)
-Plan: 1 of 3 in current phase (plan 01 complete)
-Status: Phase 4 in progress — plan 01 complete, plans 02-03 pending
-Last activity: 2026-03-03 — Plan 04-01 complete
+Plan: 3 of 3 in current phase (plans 01-02 complete)
+Status: Phase 4 in progress — plans 01-02 complete, plan 03 pending
+Last activity: 2026-03-03 — Plan 04-02 complete, app deployed to posti-days.vercel.app
 
-Progress: [█████████░] 87%
+Progress: [█████████░] 93%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: 3 min
-- Total execution time: 0.2 hours
+- Total plans completed: 7
+- Average duration: 12 min
+- Total execution time: 0.3 hours
 
 **By Phase:**
 
@@ -43,11 +43,11 @@ Progress: [█████████░] 87%
 | 01-data-pipeline | 1 | 4 min | 4 min |
 | 02-api-i18n-foundation | 2 | 4 min | 4 min |
 | 03-core-ui | 2 | 17 min | 8 min |
-| 04-postal-code-ux-deployment | 1 | 3 min | 3 min |
+| 04-postal-code-ux-deployment | 2 | 65 min | 32 min |
 
 **Recent Trend:**
-- Last 5 plans: 4 min, 4 min, 2 min, 3 min
-- Trend: stable
+- Last 5 plans: 4 min, 2 min, 3 min, 3 min, 62 min
+- Trend: longer due to Vercel deployment + security patches
 
 *Updated after each plan completion*
 | Phase 01-data-pipeline P01 | 4 | 3 tasks | 10 files |
@@ -55,6 +55,7 @@ Progress: [█████████░] 87%
 | Phase 03-core-ui P01 | 2 | 2 tasks | 7 files |
 | Phase 03-core-ui P02 | 15 | 1 task | 2 files |
 | Phase 04-postal-code-ux-deployment P01 | 3 | 2 tasks | 8 files |
+| Phase 04-postal-code-ux-deployment P02 | 62 | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -84,6 +85,9 @@ Recent decisions affecting current work:
 - [04-01]: DeliveryDisplay is a client component fetching /api/delivery — server render moved client-side to enable postal code personalization
 - [04-01]: DIGITRANSIT_API_KEY is server-only (no NEXT_PUBLIC_ prefix) — geocode proxy keeps API key off the client
 - [04-01]: PostalCodeGate checks localStorage on mount before triggering geolocation — avoids unnecessary browser prompts on return visits
+- [04-02]: TZ env var is reserved on Vercel — replaced with Intl.DateTimeFormat(Europe/Helsinki) in delivery-utils.ts for correct Finnish date computation
+- [04-02]: Next.js 15.2.2 blocked by Vercel (CVE-2025-66478) — upgraded to 15.5.12 (latest stable 15.x)
+- [04-02]: Module-level cachedData/fuseInstance for postal code lazy-loading — avoids 250KB JSON bundle impact
 
 ### Pending Todos
 
@@ -91,10 +95,10 @@ None.
 
 ### Blockers/Concerns
 
-None. Phase 4 blocker (reverse geocoding service) resolved: using Digitransit API proxied through /api/geocode Route Handler.
+None. Production deployment complete at https://posti-days.vercel.app.
 
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Completed 04-postal-code-ux-deployment/04-01-PLAN.md
+Stopped at: Completed 04-postal-code-ux-deployment/04-02-PLAN.md
 Resume file: None

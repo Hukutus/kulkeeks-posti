@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Data Pipeline** - Build-time script that converts Statistics Finland XLSX into the postal codes JSON that powers autocomplete
 - [x] **Phase 2: API + i18n Foundation** - Posti API proxy route with Zod validation and next-intl locale routing scaffold
 - [x] **Phase 3: Core UI** - Main page assembling delivery status, week view, and dialect display with visual design
-- [ ] **Phase 4: Postal Code UX + Deployment** - Interactive postal code selector (geolocation, autocomplete, persistence) and Vercel production deployment
+- [x] **Phase 4: Postal Code UX + Deployment** - Interactive postal code selector (geolocation, autocomplete, persistence) and Vercel production deployment
 
 ## Phase Details
 
@@ -76,7 +76,7 @@ Plans:
 **Plans**: 2 plans
 Plans:
 - [x] 04-01-PLAN.md — PostalCodeGate orchestrator with geolocation, geocode API proxy, localStorage persistence, and DeliveryDisplay
-- [ ] 04-02-PLAN.md — Autocomplete combobox with Fuse.js fuzzy search, grouped results by municipality, and Vercel deployment
+- [x] 04-02-PLAN.md — Autocomplete combobox with Fuse.js fuzzy search, grouped results by municipality, and Vercel deployment
 
 ## Progress
 
@@ -88,4 +88,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Data Pipeline | 1/1 | Complete | 2026-03-03 |
 | 2. API + i18n Foundation | 2/2 | Complete | 2026-03-03 |
 | 3. Core UI | 2/2 | Complete | 2026-03-03 |
-| 4. Postal Code UX + Deployment | 1/2 | In progress | - |
+| 4. Postal Code UX + Deployment | 2/2 | Complete | 2026-03-03 |

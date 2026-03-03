@@ -18,9 +18,9 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Postal Code Resolution
 
 - [ ] **POST-01**: App requests browser geolocation on first visit to determine postal code
-- [ ] **POST-02**: If geolocation is denied, user sees an autocomplete dropdown to search postal codes
-- [ ] **POST-03**: Autocomplete searches across postal code, area name (fi), area name (sv), and municipality name
-- [ ] **POST-04**: Autocomplete groups results by municipality, then by postal area within each municipality
+- [x] **POST-02**: If geolocation is denied, user sees an autocomplete dropdown to search postal codes
+- [x] **POST-03**: Autocomplete searches across postal code, area name (fi), area name (sv), and municipality name
+- [x] **POST-04**: Autocomplete groups results by municipality, then by postal area within each municipality
 - [ ] **POST-05**: App remembers selected postal code in localStorage for return visits
 - [ ] **POST-06**: User can re-check geolocation or select a different postal code at any time
 
@@ -85,9 +85,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DISP-04 | Phase 3 | Complete |
 | DISP-05 | Phase 3 | Complete |
 | POST-01 | Phase 4 | Pending |
-| POST-02 | Phase 4 | Pending |
-| POST-03 | Phase 4 | Pending |
-| POST-04 | Phase 4 | Pending |
+| POST-02 | Phase 4 | Complete |
+| POST-03 | Phase 4 | Complete |
+| POST-04 | Phase 4 | Complete |
 | POST-05 | Phase 4 | Pending |
 | POST-06 | Phase 4 | Pending |
 | I18N-01 | Phase 2 | Complete |
@@ -113,4 +113,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-03*
-*Last updated: 2026-03-03 after Phase 3 completion (03-02)*
+*Last updated: 2026-03-03 after Phase 4 plan 02 completion (04-02) — POST-02, POST-03, POST-04 complete*
