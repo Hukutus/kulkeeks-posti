@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: "2026-03-03T16:02:50.336Z"
+status: in-progress
+last_updated: "2026-03-03T16:27:29Z"
 progress:
-  total_phases: 3
+  total_phases: 4
   completed_phases: 3
-  total_plans: 5
-  completed_plans: 5
+  total_plans: 8
+  completed_plans: 6
 ---
 
 # Project State
@@ -18,21 +18,21 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-03)
 
 **Core value:** Instantly answer "Is Posti delivering mail today?" for the user's postal code — with a smile.
-**Current focus:** Phase 3 - Core UI
+**Current focus:** Phase 4 - Postal Code UX + Deployment
 
 ## Current Position
 
-Phase: 3 of 4 (Core UI)
-Plan: 2 of 2 in current phase (plan 02 complete — phase 3 done)
-Status: Phase 3 complete — all plans done, Phase 4 pending
-Last activity: 2026-03-03 — Plan 03-02 complete
+Phase: 4 of 4 (Postal Code UX + Deployment)
+Plan: 1 of 3 in current phase (plan 01 complete)
+Status: Phase 4 in progress — plan 01 complete, plans 02-03 pending
+Last activity: 2026-03-03 — Plan 04-01 complete
 
-Progress: [████████░░] 75%
+Progress: [█████████░] 87%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
+- Total plans completed: 6
 - Average duration: 3 min
 - Total execution time: 0.2 hours
 
@@ -43,16 +43,18 @@ Progress: [████████░░] 75%
 | 01-data-pipeline | 1 | 4 min | 4 min |
 | 02-api-i18n-foundation | 2 | 4 min | 4 min |
 | 03-core-ui | 2 | 17 min | 8 min |
+| 04-postal-code-ux-deployment | 1 | 3 min | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 4 min, 4 min, 2 min
-- Trend: improving
+- Last 5 plans: 4 min, 4 min, 2 min, 3 min
+- Trend: stable
 
 *Updated after each plan completion*
 | Phase 01-data-pipeline P01 | 4 | 3 tasks | 10 files |
 | Phase 02-api-i18n-foundation P01 | 4 | 2 tasks | 4 files |
 | Phase 03-core-ui P01 | 2 | 2 tasks | 7 files |
 | Phase 03-core-ui P02 | 15 | 1 task | 2 files |
+| Phase 04-postal-code-ux-deployment P01 | 3 | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -79,6 +81,9 @@ Recent decisions affecting current work:
 - [03-02]: Removed dialect name/region display from main UI — answer is the focus, metadata added visual clutter
 - [03-02]: whitespace-nowrap on answer text prevents large YES/NO from wrapping on 375px viewport
 - [03-02]: await connection() before Math.random() forces per-request rendering for dialect randomness
+- [04-01]: DeliveryDisplay is a client component fetching /api/delivery — server render moved client-side to enable postal code personalization
+- [04-01]: DIGITRANSIT_API_KEY is server-only (no NEXT_PUBLIC_ prefix) — geocode proxy keeps API key off the client
+- [04-01]: PostalCodeGate checks localStorage on mount before triggering geolocation — avoids unnecessary browser prompts on return visits
 
 ### Pending Todos
 
@@ -86,10 +91,10 @@ None.
 
 ### Blockers/Concerns
 
-- **Phase 4 blocker:** Reverse geocoding service for lat/lon → Finnish postal code not decided. Must resolve before implementing POST-01.
+None. Phase 4 blocker (reverse geocoding service) resolved: using Digitransit API proxied through /api/geocode Route Handler.
 
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Completed 03-core-ui/03-02-PLAN.md
+Stopped at: Completed 04-postal-code-ux-deployment/04-01-PLAN.md
 Resume file: None
