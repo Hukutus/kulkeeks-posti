@@ -73,7 +73,10 @@ Plans:
   4. On return visits, the previously selected postal code is restored from localStorage and the answer displays without prompting for location again
   5. A "change postal code" control is visible at all times, and clicking it allows the user to search for a different code or re-request geolocation
   6. The app is deployed and publicly accessible at a Vercel URL
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 04-01-PLAN.md — PostalCodeGate orchestrator with geolocation, geocode API proxy, localStorage persistence, and DeliveryDisplay
+- [ ] 04-02-PLAN.md — Autocomplete combobox with Fuse.js fuzzy search, grouped results by municipality, and Vercel deployment
 
 ## Progress
 
@@ -85,4 +88,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Data Pipeline | 1/1 | Complete | 2026-03-03 |
 | 2. API + i18n Foundation | 2/2 | Complete | 2026-03-03 |
 | 3. Core UI | 2/2 | Complete | 2026-03-03 |
-| 4. Postal Code UX + Deployment | 0/TBD | Not started | - |
+| 4. Postal Code UX + Deployment | 0/2 | Not started | - |
