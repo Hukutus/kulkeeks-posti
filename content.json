@@ -1,0 +1,93 @@
+{
+  "title": "Kulkeeko Posti? Kyllä / Ei — Finnish Dialects",
+  "dialects": [
+    {
+      "dialect": "Yleiskieli (kirjakieli)",
+      "region": "Koko Suomi",
+      "question": "Kulkeeko Posti?",
+      "yes": "Kyllä",
+      "no": "Ei",
+      "comment": null
+    },
+    {
+      "dialect": "Stadin slangi",
+      "region": "Pääkaupunkiseutu",
+      "question": "Kulkeeks posti?",
+      "yes": "Joo",
+      "no": "Nääh",
+      "comment": "Stadilaisella on kiire, ei jaksa tavuja tuhlata."
+    },
+    {
+      "dialect": "Turun murre",
+      "region": "Varsinais-Suomi",
+      "question": "Kulkkeeks Post?",
+      "yes": "Jo",
+      "no": "Ei",
+      "comment": "Turkulainen lyhentää kaiken. Myös kärsivällisyytensä."
+    },
+    {
+      "dialect": "Tampereen murre",
+      "region": "Pirkanmaa",
+      "question": "Kulkeeko posti?",
+      "yes": "Joo",
+      "no": "Ei",
+      "comment": "Näyttää melkein samalta, mutta se pitää sanoa nenän kautta ja samalla olla ylpeä siitä ettei asu Turussa."
+    },
+    {
+      "dialect": "Savon murre",
+      "region": "Itä-Suomi (Pohjois-/Etelä-Savo)",
+      "question": "Kulukkooko se posti?",
+      "yes": "No kylläpä kai",
+      "no": "Eipä se taia",
+      "comment": "Savolainen ei koskaan vastaa suoraan. Voi olla että kulkee. Voi olla ettei. Kattoo ny."
+    },
+    {
+      "dialect": "Pohjanmaan murre",
+      "region": "Etelä-Pohjanmaa",
+      "question": "Kulkeeko poasti?",
+      "yes": "Joo",
+      "no": "Ei",
+      "comment": "Lyhyt ja napakka. Juntti ei selittele."
+    },
+    {
+      "dialect": "Oulun murre",
+      "region": "Pohjois-Pohjanmaa",
+      "question": "Kulkeeko posti keh?",
+      "yes": "Joo",
+      "no": "Ei",
+      "comment": "Kaikki lauseet päättyy sanaan 'keh'. Älä kyseenalaista."
+    },
+    {
+      "dialect": "Rauman giäl",
+      "region": "Satakunta",
+      "question": "Kulkkeek post?",
+      "yes": "Joo",
+      "no": "Ei",
+      "comment": "Rauman murre on niin oma juttunsa, että muut suomalaisetkin tarvitsevat tulkkia."
+    },
+    {
+      "dialect": "Karjalan murre",
+      "region": "Pohjois-Karjala",
+      "question": "Kulukkooko posti?",
+      "yes": "Kyyllä",
+      "no": "Ei",
+      "comment": "Vokaalit venyy niin pitkiksi, että kirje ehtii perille ennen kuin lause loppuu."
+    },
+    {
+      "dialect": "Suomenruotsalainen suomi",
+      "region": "Uusimaa, Pohjanmaan rannikko, Turunmaa, Ahvenanmaa",
+      "question": "Kulkeeko se posti?",
+      "yes": "Jåå",
+      "no": "Nej... siis, ei",
+      "comment": "Lause alkaa ihan hyvin, mutta puolivälissä aivot vaihtaa ruotsiin ja sitten pitää korjata."
+    },
+    {
+      "dialect": "Finlandssvenska",
+      "region": "Uusimaa, Pohjanmaan rannikko, Turunmaa, Ahvenanmaa",
+      "question": "Går posten?",
+      "yes": "Ja",
+      "no": "Nej",
+      "comment": "Lyhyt, tyylikäs, ja sanotaan purjeveneen kannelta. Tai Stockmannin kahvilassa."
+    }
+  ]
+}
