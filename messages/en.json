@@ -11,7 +11,9 @@
     "postalCode": "Postal code",
     "yes": "Yes",
     "no": "No",
-    "today": "Today"
+    "today": "Today",
+    "deliveryDay": "Delivery",
+    "noDelivery": "No delivery"
   },
   "PostalCode": {
     "allowLocation": "Allow location access to find your postal code",

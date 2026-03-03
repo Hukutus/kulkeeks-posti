@@ -11,7 +11,9 @@
     "postalCode": "Poastanummir",
     "yes": "De",
     "no": "Ii",
-    "today": "Odne"
+    "today": "Odne",
+    "deliveryDay": "Poasta",
+    "noDelivery": "Ii poasta"
   },
   "PostalCode": {
     "allowLocation": "Dohkket sajadatbeasama gahtat din poastanummira",

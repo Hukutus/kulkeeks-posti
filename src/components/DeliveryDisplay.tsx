@@ -110,8 +110,6 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
 
   return (
     <div className="max-w-sm w-full mx-auto text-center">
-      <h1 className="sr-only">Posti Days</h1>
-
       {/* Delivery status live region */}
       <div role="status" aria-live="polite">
         {/* Dialect question */}

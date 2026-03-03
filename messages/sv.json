@@ -11,7 +11,9 @@
     "postalCode": "Postnummer",
     "yes": "Ja",
     "no": "Nej",
-    "today": "Idag"
+    "today": "Idag",
+    "deliveryDay": "Utdelning",
+    "noDelivery": "Ingen utdelning"
   },
   "PostalCode": {
     "allowLocation": "Tillåt platsåtkomst för att hitta ditt postnummer",

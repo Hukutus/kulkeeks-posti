@@ -11,7 +11,9 @@
     "postalCode": "Postinumero",
     "yes": "Kyllä",
     "no": "Ei",
-    "today": "Tänään"
+    "today": "Tänään",
+    "deliveryDay": "Jakelu",
+    "noDelivery": "Ei jakelua"
   },
   "PostalCode": {
     "allowLocation": "Salli sijainti postinumeron selvittämiseksi",
