@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: MVP
 status: shipped
-last_updated: "2026-03-03T17:48:04.641Z"
+last_updated: "2026-03-03T19:48:33Z"
 progress:
   total_phases: 4
   completed_phases: 4
@@ -63,9 +63,10 @@ None.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 1 | Upgrade all dependencies to latest versions | 2026-03-03 | 04c55df | [1-upgrade-all-dependencies-to-latest-versi](./quick/1-upgrade-all-dependencies-to-latest-versi/) |
+| 2 | Fix iOS Safari white bars and add language/theme toggles | 2026-03-03 | 6328339 | [2-fix-ios-safari-white-bars-and-add-langua](./quick/2-fix-ios-safari-white-bars-and-add-langua/) |
 
 ## Session Continuity
 
-Last activity: 2026-03-03 - Completed quick task 1: Upgrade all dependencies to latest versions
-Stopped at: Quick task 1 complete
+Last activity: 2026-03-03 - Completed quick task 2: Fix iOS Safari white bars and add language/theme toggles
+Stopped at: Quick task 2 complete
 Resume file: None
