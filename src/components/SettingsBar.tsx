@@ -2,9 +2,11 @@
 
 import { useLocale } from 'next-intl'
 import { useRouter, usePathname } from '@/i18n/navigation'
+import { useState, useEffect, useTransition } from 'react'
 
 const locales = ['fi', 'en', 'sv', 'se'] as const
 type Locale = (typeof locales)[number]
+type ThemePref = 'light' | 'dark' | 'system'
 
 function SunIcon() {
   return (
@@ -30,24 +32,75 @@ function MoonIcon() {
   )
 }
 
+function MonitorIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+      <line x1="8" y1="21" x2="16" y2="21" />
+      <line x1="12" y1="17" x2="12" y2="21" />
+    </svg>
+  )
+}
+
 export default function SettingsBar() {
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
+  const [isPending, startTransition] = useTransition()
+  const [themePref, setThemePref] = useState<ThemePref>('system')
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('posti-days:theme') as ThemePref | null
+      if (stored === 'light' || stored === 'dark' || stored === 'system') {
+        setThemePref(stored)
+      } else {
+        setThemePref('system')
+      }
+    } catch (e) {
+      // localStorage may be unavailable
+    }
+  }, [])
 
   function switchLocale(newLocale: Locale) {
-    router.replace(pathname, { locale: newLocale })
+    const isDark = document.documentElement.classList.contains('dark')
+    document.documentElement.style.backgroundColor = isDark ? '#0c0a09' : '#fafaf9'
+    startTransition(() => {
+      router.replace(pathname, { locale: newLocale })
+    })
   }
 
   function toggleTheme() {
-    const isDark = document.documentElement.classList.contains('dark')
-    if (isDark) {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('posti-days:theme', 'light')
+    let next: ThemePref
+    if (themePref === 'light') {
+      next = 'dark'
+    } else if (themePref === 'dark') {
+      next = 'system'
     } else {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('posti-days:theme', 'dark')
+      // 'system' or initial -> light
+      next = 'light'
     }
+
+    try {
+      localStorage.setItem('posti-days:theme', next)
+    } catch (e) {
+      // localStorage may be unavailable
+    }
+
+    // Apply immediately
+    const shouldBeDark = next === 'dark' || (next === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    document.documentElement.classList.toggle('dark', shouldBeDark)
+
+    setThemePref(next)
+
+    // Notify ThemeSync
+    window.dispatchEvent(new Event('theme-sync'))
+  }
+
+  function getThemeAriaLabel(): string {
+    if (themePref === 'light') return 'Theme: light, switch to dark'
+    if (themePref === 'dark') return 'Theme: dark, switch to system'
+    return 'Theme: system, switch to light'
   }
 
   return (
@@ -57,6 +110,7 @@ export default function SettingsBar() {
           {i > 0 && <span aria-hidden="true" className="px-1">/</span>}
           <button
             onClick={() => switchLocale(l)}
+            aria-disabled={isPending}
             className={`cursor-pointer transition-colors p-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500 dark:focus-visible:outline-stone-400 focus-visible:rounded-sm ${
               l === locale
                 ? 'font-semibold text-stone-700 dark:text-stone-200'
@@ -73,10 +127,11 @@ export default function SettingsBar() {
       <button
         onClick={toggleTheme}
         className="cursor-pointer hover:text-stone-700 dark:hover:text-stone-200 transition-colors p-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500 dark:focus-visible:outline-stone-400 focus-visible:rounded-sm"
-        aria-label="Toggle dark/light theme"
+        aria-label={getThemeAriaLabel()}
       >
-        <span className="hidden dark:inline"><SunIcon /></span>
-        <span className="inline dark:hidden"><MoonIcon /></span>
+        {themePref === 'light' && <MoonIcon />}
+        {themePref === 'dark' && <MonitorIcon />}
+        {themePref === 'system' && <SunIcon />}
       </button>
       <span aria-hidden="true" className="px-1">·</span>
       <a
