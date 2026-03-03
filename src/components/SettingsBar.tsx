@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl'
 import { useRouter, usePathname } from '@/i18n/navigation'
 
-const locales = ['fi', 'en', 'sv'] as const
+const locales = ['fi', 'en', 'sv', 'se'] as const
 type Locale = (typeof locales)[number]
 
 function SunIcon() {

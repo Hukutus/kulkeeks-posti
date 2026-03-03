@@ -1,0 +1,28 @@
+{
+  "Common": {
+    "loading": "Viehka...",
+    "error": "Meattahus",
+    "title": "Posti Days",
+    "description": "Juogadago Posti poasta odne?"
+  },
+  "Delivery": {
+    "errorTitle": "Ii sahtten darkistit juogadeami",
+    "weekTitle": "Dán vahku",
+    "postalCode": "Poastanummir",
+    "yes": "De",
+    "no": "Ii",
+    "today": "Odne"
+  },
+  "PostalCode": {
+    "allowLocation": "Dohkket sajadatbeasama gahtat din poastanummira",
+    "locationDenied": "Sajadatbeassan hilgojuvvui",
+    "locationError": "Ii sahtten mearridit sajadaga",
+    "tryAgain": "Geahččal oddasis",
+    "enterPostalCode": "Biija poastanummira",
+    "searchPlaceholder": "Poastanummir dahje guovlu...",
+    "searchManually": "Dahje oza ieš",
+    "changeCode": "Molso poastanummira",
+    "useLocation": "Geavat dalaš sajadaga",
+    "submit": "Oza"
+  }
+}
