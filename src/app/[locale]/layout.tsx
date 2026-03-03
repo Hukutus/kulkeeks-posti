@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
+import { Caveat } from 'next/font/google'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import './globals.css'
+
+const caveat = Caveat({ variable: '--font-caveat', subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'Posti Days',
@@ -29,7 +32,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale)
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={caveat.variable}>
       <body>
         <NextIntlClientProvider>
           {children}

@@ -4,5 +4,13 @@
     "error": "Virhe",
     "title": "Posti Days",
     "description": "Jakaako Posti postia tanaan?"
+  },
+  "Delivery": {
+    "errorTitle": "Jakelua ei voitu tarkistaa",
+    "weekTitle": "Tama viikko",
+    "postalCode": "Postinumero",
+    "yes": "Kylla",
+    "no": "Ei",
+    "today": "Tanaan"
   }
 }

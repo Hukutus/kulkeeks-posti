@@ -4,5 +4,13 @@
     "error": "Error",
     "title": "Posti Days",
     "description": "Is Posti delivering mail today?"
+  },
+  "Delivery": {
+    "errorTitle": "Could not check delivery",
+    "weekTitle": "This week",
+    "postalCode": "Postal code",
+    "yes": "Yes",
+    "no": "No",
+    "today": "Today"
   }
 }

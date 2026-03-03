@@ -4,5 +4,13 @@
     "error": "Fel",
     "title": "Posti Days",
     "description": "Delar Posten ut post idag?"
+  },
+  "Delivery": {
+    "errorTitle": "Kunde inte kontrollera utdelning",
+    "weekTitle": "Denna vecka",
+    "postalCode": "Postnummer",
+    "yes": "Ja",
+    "no": "Nej",
+    "today": "Idag"
   }
 }
