@@ -11,6 +11,7 @@ type Status = 'loading' | 'resolved' | 'selecting'
 export default function PostalCodeGate() {
   const [postalCode, setPostalCode] = useState<string | null>(null)
   const [status, setStatus] = useState<Status>('loading')
+  const [isChanging, setIsChanging] = useState(false)
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY)
@@ -31,6 +32,7 @@ export default function PostalCodeGate() {
   const handleChangeCode = () => {
     localStorage.removeItem(STORAGE_KEY)
     setPostalCode(null)
+    setIsChanging(true)
     setStatus('selecting')
   }
 
@@ -46,7 +48,7 @@ export default function PostalCodeGate() {
   }
 
   if (status === 'selecting') {
-    return <PostalCodeSelector onCodeSelected={handleCodeSelected} />
+    return <PostalCodeSelector onCodeSelected={handleCodeSelected} skipGeolocation={isChanging} />
   }
 
   return (

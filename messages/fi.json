@@ -22,6 +22,7 @@
     "searchPlaceholder": "Postinumero tai alue...",
     "searchManually": "Tai hae manuaalisesti",
     "changeCode": "Vaihda postinumeroa",
+    "useLocation": "Käytä nykyistä sijaintia",
     "submit": "Hae"
   }
 }

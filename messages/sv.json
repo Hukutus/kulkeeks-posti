@@ -22,6 +22,7 @@
     "searchPlaceholder": "Postnummer eller område...",
     "searchManually": "Eller sök manuellt",
     "changeCode": "Byt postnummer",
+    "useLocation": "Använd nuvarande plats",
     "submit": "Sök"
   }
 }

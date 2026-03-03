@@ -7,9 +7,10 @@ import { useTranslations } from 'next-intl'
 
 type Props = {
   onCodeSelected: (code: string) => void
+  skipGeolocation?: boolean
 }
 
-type GeoState = 'requesting' | 'denied' | 'error'
+type GeoState = 'requesting' | 'denied' | 'error' | 'manual'
 
 type PostalEntry = {
   postal_code: string
@@ -56,9 +57,9 @@ function groupByMunicipality(entries: PostalEntry[]): Map<string, PostalEntry[]>
   return map
 }
 
-export default function PostalCodeSelector({ onCodeSelected }: Props) {
+export default function PostalCodeSelector({ onCodeSelected, skipGeolocation }: Props) {
   const t = useTranslations('PostalCode')
-  const [geoState, setGeoState] = useState<GeoState>('requesting')
+  const [geoState, setGeoState] = useState<GeoState>(skipGeolocation ? 'manual' : 'requesting')
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<PostalEntry[]>([])
   const loadedRef = useRef(false)
@@ -92,7 +93,9 @@ export default function PostalCodeSelector({ onCodeSelected }: Props) {
   }
 
   useEffect(() => {
-    requestGeolocation()
+    if (!skipGeolocation) {
+      requestGeolocation()
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -142,9 +145,11 @@ export default function PostalCodeSelector({ onCodeSelected }: Props) {
 
   return (
     <div className="flex flex-col gap-4 py-8 w-full max-w-sm mx-auto">
-      <p className="text-sm text-stone-500 dark:text-stone-400 text-center">
-        {geoState === 'denied' ? t('locationDenied') : t('locationError')}
-      </p>
+      {geoState !== 'manual' && (
+        <p className="text-sm text-stone-500 dark:text-stone-400 text-center">
+          {geoState === 'denied' ? t('locationDenied') : t('locationError')}
+        </p>
+      )}
 
       <Combobox onChange={handleSelect}>
         <ComboboxInput
@@ -196,7 +201,7 @@ export default function PostalCodeSelector({ onCodeSelected }: Props) {
         onClick={requestGeolocation}
         className="text-sm text-stone-400 dark:text-stone-500 underline hover:text-stone-600 dark:hover:text-stone-300 cursor-pointer self-center"
       >
-        {t('tryAgain')}
+        {geoState === 'manual' ? t('useLocation') : t('tryAgain')}
       </button>
     </div>
   )

@@ -22,6 +22,7 @@
     "searchPlaceholder": "Postal code or area name...",
     "searchManually": "Or search manually",
     "changeCode": "Change postal code",
+    "useLocation": "Use current location",
     "submit": "Go"
   }
 }
