@@ -5,10 +5,10 @@ milestone_name: milestone
 status: unknown
 last_updated: "2026-03-03T13:53:01.787Z"
 progress:
-  total_phases: 2
-  completed_phases: 1
+  total_phases: 4
+  completed_phases: 2
   total_plans: 3
-  completed_plans: 2
+  completed_plans: 3
 ---
 
 # Project State
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-03)
 ## Current Position
 
 Phase: 2 of 4 (API + i18n Foundation)
-Plan: 1 of 2 in current phase
-Status: Phase 2 in progress — Plan 02-01 complete
-Last activity: 2026-03-03 — Plan 02-01 complete
+Plan: 2 of 2 in current phase
+Status: Phase 2 complete — all plans done
+Last activity: 2026-03-03 — Plan 02-02 complete
 
-Progress: [███░░░░░░░] 37%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -67,6 +67,8 @@ Recent decisions affecting current work:
 - [Phase 02-01]: Posti API returns [] for P.O. Box codes — empty array check after safeParse handles this cleanly
 - [Phase 02-01]: Route Handler imports DeliverySchema from @/lib/get-delivery-dates — single source of truth for Posti response shape
 - [Phase 02-01]: Both cache guards required: export const dynamic = 'force-dynamic' + cache: 'no-store' on fetch — delivery dates change daily
+- [02-02]: middleware.ts must be in src/ (not project root) when using Next.js 15 with src/app/ layout — rootDir is computed as src/ and Next.js only searches that directory
+- [02-02]: @tailwindcss/postcss required for Tailwind v4 — was missing from package.json despite being referenced in postcss.config.mjs
 
 ### Pending Todos
 
@@ -79,5 +81,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Completed 02-api-i18n-foundation/02-01-PLAN.md
+Stopped at: Completed 02-api-i18n-foundation/02-02-PLAN.md
 Resume file: None

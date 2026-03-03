@@ -26,11 +26,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Internationalization
 
-- [ ] **I18N-01**: UI chrome supports Finnish, English, and Swedish
-- [ ] **I18N-02**: App auto-detects language from browser/device settings, falls back to English if no match
-- [ ] **I18N-03**: User can manually switch language via a language selector
-- [ ] **I18N-04**: App remembers manual language selection for return visits
-- [ ] **I18N-05**: Dialect content (question/answer) always displays in Finnish regardless of selected language
+- [x] **I18N-01**: UI chrome supports Finnish, English, and Swedish
+- [x] **I18N-02**: App auto-detects language from browser/device settings, falls back to English if no match
+- [x] **I18N-03**: User can manually switch language via a language selector
+- [x] **I18N-04**: App remembers manual language selection for return visits
+- [x] **I18N-05**: Dialect content (question/answer) always displays in Finnish regardless of selected language
 
 ### Data Pipeline
 
@@ -90,11 +90,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | POST-04 | Phase 4 | Pending |
 | POST-05 | Phase 4 | Pending |
 | POST-06 | Phase 4 | Pending |
-| I18N-01 | Phase 2 | Pending |
-| I18N-02 | Phase 2 | Pending |
-| I18N-03 | Phase 2 | Pending |
-| I18N-04 | Phase 2 | Pending |
-| I18N-05 | Phase 2 | Pending |
+| I18N-01 | Phase 2 | Complete |
+| I18N-02 | Phase 2 | Complete |
+| I18N-03 | Phase 2 | Complete |
+| I18N-04 | Phase 2 | Complete |
+| I18N-05 | Phase 2 | Complete |
 | DATA-01 | Phase 1 | Complete |
 | DATA-02 | Phase 1 | Complete |
 | DATA-03 | Phase 1 | Complete |
