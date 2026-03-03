@@ -28,7 +28,9 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. The JSON contains postal code, Finnish area name, Swedish area name, Finnish municipality name, and Swedish municipality name for every entry
   3. The script resolves the correct Statistics Finland XLSX URL dynamically (tries current year, falls back to prior year on 404)
   4. Swedish municipality names are present and non-empty in the output (not blank group headers)
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 01-01-PLAN.md — Initialize Next.js project, create postal code generation script, run and validate output
 
 ### Phase 2: API + i18n Foundation
 **Goal**: The app can fetch and return Posti delivery dates server-side without CORS issues, validated against a known schema, and all UI strings can be rendered in Finnish, English, or Swedish via locale-aware routing
@@ -74,7 +76,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Data Pipeline | 0/? | Not started | - |
+| 1. Data Pipeline | 0/1 | Planned | - |
 | 2. API + i18n Foundation | 0/? | Not started | - |
 | 3. Core UI | 0/? | Not started | - |
 | 4. Postal Code UX + Deployment | 0/? | Not started | - |
