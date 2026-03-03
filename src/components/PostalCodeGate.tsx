@@ -39,9 +39,9 @@ export default function PostalCodeGate() {
 
   if (status === 'loading') {
     return (
-      <div className="flex items-center justify-center min-h-[200px]">
+      <div role="status" aria-label="Loading" className="flex items-center justify-center min-h-[200px]">
         <div
-          className="w-2 h-2 rounded-full bg-stone-400 dark:bg-stone-500 animate-pulse"
+          className="w-2 h-2 rounded-full bg-stone-400 dark:bg-stone-500 motion-safe:animate-pulse"
           aria-hidden="true"
         />
       </div>

@@ -70,7 +70,7 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
         <p className="font-handwriting text-3xl sm:text-4xl text-stone-700 dark:text-stone-300 leading-relaxed">
           {dialect.question}
         </p>
-        <p className="font-handwriting text-5xl sm:text-6xl font-bold mt-6 mb-4 text-stone-300 dark:text-stone-700 animate-pulse">
+        <p className="font-handwriting text-5xl sm:text-6xl font-bold mt-6 mb-4 text-stone-400 dark:text-stone-500 motion-safe:animate-pulse">
           ...
         </p>
       </div>
@@ -91,7 +91,7 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
         </div>
         <button
           onClick={onChangeCode}
-          className="mt-6 text-sm text-stone-400 dark:text-stone-500 underline hover:text-stone-600 dark:hover:text-stone-300 cursor-pointer"
+          className="mt-6 text-sm text-stone-500 dark:text-stone-400 underline hover:text-stone-700 dark:hover:text-stone-200 cursor-pointer py-2 px-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500 dark:focus-visible:outline-stone-400 focus-visible:rounded-sm"
         >
           {tPostal('changeCode')}
         </button>
@@ -110,19 +110,24 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
 
   return (
     <div className="max-w-sm w-full mx-auto text-center">
-      {/* Dialect question */}
-      <p className="font-handwriting text-3xl sm:text-4xl text-stone-700 dark:text-stone-300 leading-relaxed">
-        {dialect.question}
-      </p>
+      <h1 className="sr-only">Posti Days</h1>
 
-      {/* Main answer — largest element, primary information */}
-      <p className={`font-handwriting text-5xl sm:text-6xl font-bold mt-6 mb-4 ${answerColor}`}>
-        {deliveryToday ? dialect.yes : dialect.no}
-      </p>
+      {/* Delivery status live region */}
+      <div role="status" aria-live="polite">
+        {/* Dialect question */}
+        <p className="font-handwriting text-3xl sm:text-4xl text-stone-700 dark:text-stone-300 leading-relaxed">
+          {dialect.question}
+        </p>
+
+        {/* Main answer — largest element, primary information */}
+        <p className={`font-handwriting text-5xl sm:text-6xl font-bold mt-6 mb-4 ${answerColor}`}>
+          {deliveryToday ? dialect.yes : dialect.no}
+        </p>
+      </div>
 
       {/* Week view — compact secondary info */}
-      <div className="mt-14 w-full bg-white/60 dark:bg-stone-900/60 rounded-xl px-4 py-3 border border-stone-200 dark:border-stone-800">
-        <h2 className="text-xs font-medium uppercase tracking-wide text-stone-400 dark:text-stone-500 mb-2">
+      <section aria-labelledby="week-title" className="mt-14 w-full bg-white/60 dark:bg-stone-900/60 rounded-xl px-4 py-3 border border-stone-200 dark:border-stone-800">
+        <h2 id="week-title" className="text-xs font-medium uppercase tracking-wide text-stone-500 dark:text-stone-400 mb-2">
           {t('weekTitle')}
         </h2>
         <ul className="space-y-0">
@@ -154,13 +159,14 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
                   className={`flex-1 text-left text-xs capitalize ${
                     isDelivery
                       ? 'text-stone-600 dark:text-stone-300'
-                      : 'text-stone-400 dark:text-stone-500'
+                      : 'text-stone-500 dark:text-stone-400'
                   }`}
                 >
                   {dateLabel}
+                  <span className="sr-only">{isDelivery ? t('deliveryDay') : t('noDelivery')}</span>
                 </span>
                 {isToday && (
-                  <span className="text-[10px] text-stone-400 dark:text-stone-500 font-medium shrink-0">
+                  <span className="text-[10px] text-stone-500 dark:text-stone-400 font-medium shrink-0">
                     {t('today')}
                   </span>
                 )}
@@ -168,15 +174,15 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
             )
           })}
         </ul>
-      </div>
+      </section>
 
       {/* Postal code + change control */}
-      <div className="mt-4 flex items-center justify-center gap-2 text-xs text-stone-400 dark:text-stone-500">
+      <div className="mt-4 flex items-center justify-center gap-2 text-xs text-stone-500 dark:text-stone-400">
         <span>{t('postalCode')} {postalCode}</span>
         <span aria-hidden="true">·</span>
         <button
           onClick={onChangeCode}
-          className="underline hover:text-stone-600 dark:hover:text-stone-300 cursor-pointer"
+          className="underline hover:text-stone-700 dark:hover:text-stone-200 cursor-pointer py-1 px-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500 dark:focus-visible:outline-stone-400 focus-visible:rounded-sm"
         >
           {tPostal('changeCode')}
         </button>

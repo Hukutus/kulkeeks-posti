@@ -123,9 +123,9 @@ export default function PostalCodeSelector({ onCodeSelected, skipGeolocation }: 
 
   if (geoState === 'requesting') {
     return (
-      <div className="flex flex-col items-center gap-4 py-8">
+      <div role="status" aria-live="polite" className="flex flex-col items-center gap-4 py-8">
         <div
-          className="w-3 h-3 rounded-full bg-stone-400 dark:bg-stone-500 animate-pulse"
+          className="w-3 h-3 rounded-full bg-stone-400 dark:bg-stone-500 motion-safe:animate-pulse"
           aria-hidden="true"
         />
         <p className="text-sm text-stone-500 dark:text-stone-400 text-center max-w-xs">
@@ -133,7 +133,7 @@ export default function PostalCodeSelector({ onCodeSelected, skipGeolocation }: 
         </p>
         <button
           onClick={() => setGeoState('denied')}
-          className="text-xs text-stone-400 dark:text-stone-500 underline hover:text-stone-600 dark:hover:text-stone-300 cursor-pointer"
+          className="text-xs text-stone-500 dark:text-stone-400 underline hover:text-stone-700 dark:hover:text-stone-200 cursor-pointer py-2 px-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500 dark:focus-visible:outline-stone-400 focus-visible:rounded-sm"
         >
           {t('searchManually')}
         </button>
@@ -146,9 +146,11 @@ export default function PostalCodeSelector({ onCodeSelected, skipGeolocation }: 
   return (
     <div className="flex flex-col gap-4 py-8 w-full max-w-sm mx-auto">
       {geoState !== 'manual' && (
-        <p className="text-sm text-stone-500 dark:text-stone-400 text-center">
-          {geoState === 'denied' ? t('locationDenied') : t('locationError')}
-        </p>
+        <div role="status" aria-live="polite">
+          <p className="text-sm text-stone-500 dark:text-stone-400 text-center">
+            {geoState === 'denied' ? t('locationDenied') : t('locationError')}
+          </p>
+        </div>
       )}
 
       <Combobox onChange={handleSelect}>
@@ -159,7 +161,7 @@ export default function PostalCodeSelector({ onCodeSelected, skipGeolocation }: 
           onChange={(e) => handleQueryChange(e.target.value)}
           onFocus={handleInputFocus}
           autoComplete="off"
-          className="w-full border border-stone-300 dark:border-stone-700 rounded-xl px-4 py-3 bg-white dark:bg-stone-900 text-stone-800 dark:text-stone-200 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-400"
+          className="w-full border border-stone-300 dark:border-stone-700 rounded-xl px-4 py-3 bg-white dark:bg-stone-900 text-stone-800 dark:text-stone-200 placeholder-stone-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 dark:focus-visible:ring-stone-400"
         />
         {results.length > 0 && (
           <ComboboxOptions
@@ -168,7 +170,7 @@ export default function PostalCodeSelector({ onCodeSelected, skipGeolocation }: 
           >
             {[...grouped.entries()].map(([municipality, entries]) => (
               <li key={municipality}>
-                <div className="text-xs font-semibold text-stone-500 uppercase tracking-wide px-3 py-1 bg-stone-50 dark:bg-stone-950 sticky top-0">
+                <div className="text-xs font-semibold text-stone-600 dark:text-stone-400 uppercase tracking-wide px-3 py-1 bg-stone-50 dark:bg-stone-950 sticky top-0">
                   {municipality}
                 </div>
                 <ul>
@@ -199,7 +201,7 @@ export default function PostalCodeSelector({ onCodeSelected, skipGeolocation }: 
 
       <button
         onClick={requestGeolocation}
-        className="text-sm text-stone-400 dark:text-stone-500 underline hover:text-stone-600 dark:hover:text-stone-300 cursor-pointer self-center"
+        className="text-sm text-stone-500 dark:text-stone-400 underline hover:text-stone-700 dark:hover:text-stone-200 cursor-pointer self-center py-2 px-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500 dark:focus-visible:outline-stone-400 focus-visible:rounded-sm"
       >
         {geoState === 'manual' ? t('useLocation') : t('tryAgain')}
       </button>
