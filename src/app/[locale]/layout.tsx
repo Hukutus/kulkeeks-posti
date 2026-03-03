@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Caveat } from 'next/font/google'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
@@ -11,6 +11,12 @@ const caveat = Caveat({ variable: '--font-caveat', subsets: ['latin'], display: 
 export const metadata: Metadata = {
   title: 'Posti Days',
   description: 'Is Posti delivering mail today?',
+}
+
+export const viewport: Viewport = {
+  viewportFit: 'cover',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 type Props = {
@@ -32,8 +38,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale)
 
   return (
-    <html lang={locale} className={caveat.variable}>
-      <body>
+    <html lang={locale} className={`${caveat.variable} bg-stone-50 dark:bg-stone-950`} suppressHydrationWarning>
+      <body className="bg-stone-50 dark:bg-stone-950 min-h-dvh">
         <NextIntlClientProvider>
           {children}
         </NextIntlClientProvider>

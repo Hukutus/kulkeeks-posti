@@ -10,7 +10,7 @@ export default async function Home({ params }: Props) {
   setRequestLocale(locale)
 
   return (
-    <main className="min-h-screen bg-stone-50 dark:bg-stone-950 flex flex-col items-center px-4 py-12 sm:py-16">
+    <main className="min-h-dvh bg-stone-50 dark:bg-stone-950 flex flex-col items-center px-4 py-12 sm:py-16">
       <PostalCodeGate />
     </main>
   )
