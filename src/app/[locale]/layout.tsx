@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Caveat } from 'next/font/google'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
@@ -9,9 +10,13 @@ import './globals.css'
 
 const caveat = Caveat({ variable: '--font-caveat', subsets: ['latin'], display: 'swap' })
 
-export const metadata: Metadata = {
-  title: 'Posti Days',
-  description: 'Is Posti delivering mail today?',
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'Common' })
+  return {
+    title: t('title'),
+    description: t('description'),
+  }
 }
 
 export const viewport: Viewport = {

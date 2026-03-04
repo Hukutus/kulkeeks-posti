@@ -36,6 +36,7 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
     () => content.dialects[Math.floor(Math.random() * content.dialects.length)]
   )
 
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true)
@@ -69,8 +70,8 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
         <p className="font-handwriting text-3xl sm:text-4xl text-stone-700 dark:text-stone-300 leading-relaxed">
           {dialect.question}
         </p>
-        <p className="text-xs text-stone-400 dark:text-stone-500 mt-1">
-          — {dialect.dialect}
+        <p className="text-xs text-stone-400 dark:text-stone-500 -mt-2">
+          {dialect.dialect}
         </p>
         <p className="font-handwriting text-5xl sm:text-6xl font-bold mt-6 mb-4 text-stone-400 dark:text-stone-500 motion-safe:animate-pulse">
           ...
@@ -85,8 +86,8 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
         <p className="font-handwriting text-3xl sm:text-4xl text-stone-700 dark:text-stone-300 leading-relaxed">
           {dialect.question}
         </p>
-        <p className="text-xs text-stone-400 dark:text-stone-500 mt-1 mb-6">
-          — {dialect.dialect}
+        <p className="text-xs text-stone-400 dark:text-stone-500 -mt-2 mb-6">
+          {dialect.dialect}
         </p>
         <div className="bg-white dark:bg-stone-900 rounded-2xl p-6 shadow-sm border border-stone-200 dark:border-stone-800">
           <p className="text-lg font-semibold text-stone-700 dark:text-stone-300 mb-2">
@@ -127,8 +128,8 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
         </p>
 
         {/* Dialect name label — subtle contextual info */}
-        <p className="text-xs text-stone-400 dark:text-stone-500 mt-1">
-          — {dialect.dialect}
+        <p className="text-xs text-stone-400 dark:text-stone-500 -mt-2">
+          {dialect.dialect}
         </p>
 
         {/* Main answer — largest element, primary information */}
