@@ -53,6 +53,7 @@ export default function SettingsBar() {
     try {
       const stored = localStorage.getItem('posti-days:theme') as ThemePref | null
       if (stored === 'light' || stored === 'dark' || stored === 'system') {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setThemePref(stored)
       } else {
         setThemePref('system')
