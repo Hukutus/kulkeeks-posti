@@ -2,8 +2,8 @@ import { test, describe } from 'node:test'
 import assert from 'node:assert/strict'
 import {
   getTodayISO,
-  getCurrentWeekISO,
-  filterWeekDeliveries,
+  getDateRange,
+  filterDeliveries,
   isDeliveryDay,
 } from './delivery-utils.js'
 
@@ -21,84 +21,62 @@ describe('getTodayISO', () => {
   })
 })
 
-describe('getCurrentWeekISO', () => {
-  test('returns exactly 7 ISO date strings', () => {
-    const result = getCurrentWeekISO()
-    assert.equal(result.length, 7)
+describe('getDateRange', () => {
+  test('returns consecutive dates from start to end inclusive', () => {
+    const result = getDateRange('2026-03-04', '2026-03-06')
+    assert.deepEqual(result, ['2026-03-04', '2026-03-05', '2026-03-06'])
+  })
+
+  test('returns a single date when start equals end', () => {
+    const result = getDateRange('2026-03-04', '2026-03-04')
+    assert.deepEqual(result, ['2026-03-04'])
+  })
+
+  test('returns just the start date when end is before start', () => {
+    const result = getDateRange('2026-03-04', '2026-03-03')
+    assert.deepEqual(result, ['2026-03-04'])
   })
 
   test('all returned values match YYYY-MM-DD format', () => {
-    const result = getCurrentWeekISO()
+    const result = getDateRange('2026-03-04', '2026-03-10')
     for (const d of result) {
       assert.match(d, /^\d{4}-\d{2}-\d{2}$/)
     }
   })
 
-  test('first element is always a Monday', () => {
-    const result = getCurrentWeekISO()
-    const monday = new Date(result[0] + 'T00:00:00')
-    // getDay(): 0=Sun, 1=Mon, ..., 6=Sat
-    assert.equal(monday.getDay(), 1, `Expected Monday but got day ${monday.getDay()} for ${result[0]}`)
-  })
-
-  test('last element is always a Sunday', () => {
-    const result = getCurrentWeekISO()
-    const sunday = new Date(result[6] + 'T00:00:00')
-    assert.equal(sunday.getDay(), 0, `Expected Sunday but got day ${sunday.getDay()} for ${result[6]}`)
+  test('returns correct number of days', () => {
+    const result = getDateRange('2026-03-04', '2026-03-10')
+    assert.equal(result.length, 7)
   })
 
   test('days are consecutive (each day is 1 day after the previous)', () => {
-    const result = getCurrentWeekISO()
+    const result = getDateRange('2026-03-04', '2026-03-10')
     for (let i = 1; i < result.length; i++) {
-      const prev = new Date(result[i - 1] + 'T00:00:00')
-      const curr = new Date(result[i] + 'T00:00:00')
+      const prev = new Date(result[i - 1] + 'T00:00:00Z')
+      const curr = new Date(result[i] + 'T00:00:00Z')
       const diffMs = curr.getTime() - prev.getTime()
       const diffDays = diffMs / (1000 * 60 * 60 * 24)
       assert.equal(diffDays, 1, `Days not consecutive: ${result[i - 1]} -> ${result[i]}`)
     }
   })
-
-  test('current date is within the returned week', () => {
-    const result = getCurrentWeekISO()
-    const today = getTodayISO()
-    assert.ok(result.includes(today), `Today (${today}) should be in the week: ${result}`)
-  })
-
-  test('on a Sunday returns the week that contains that Sunday (Mon-Sun)', () => {
-    // We simulate a known Sunday: 2026-03-01 is a Sunday
-    // We can verify by creating a Date and checking
-    // Since we can't mock Date here easily, we verify the invariant with the current week:
-    // the returned week should always contain today, regardless of what day it is.
-    const result = getCurrentWeekISO()
-    const today = getTodayISO()
-    assert.ok(result.includes(today))
-    // Verify first day is Monday and contains today
-    assert.equal(new Date(result[0] + 'T00:00:00').getDay(), 1)
-    assert.equal(new Date(result[6] + 'T00:00:00').getDay(), 0)
-  })
 })
 
-describe('filterWeekDeliveries', () => {
-  test('returns only dates within the given week ISO array', () => {
-    // Simulate a week containing 2026-03-02 to 2026-03-08
-    const weekISO = [
-      '2026-03-02',
-      '2026-03-03',
+describe('filterDeliveries', () => {
+  test('returns only dates within the given date range array', () => {
+    const dateRange = [
       '2026-03-04',
       '2026-03-05',
       '2026-03-06',
       '2026-03-07',
       '2026-03-08',
     ]
-    const deliveryDates = ['2026-03-02', '2026-03-03', '2026-03-10']
-    const result = filterWeekDeliveries(deliveryDates, weekISO)
-    assert.deepEqual(result, ['2026-03-02', '2026-03-03'])
+    const deliveryDates = ['2026-03-04', '2026-03-05', '2026-03-10']
+    const result = filterDeliveries(deliveryDates, dateRange)
+    assert.deepEqual(result, ['2026-03-04', '2026-03-05'])
   })
 
-  test('returns empty array when no delivery dates fall within the week', () => {
-    const weekISO = [
-      '2026-03-02',
-      '2026-03-03',
+  test('returns empty array when no delivery dates fall within the range', () => {
+    const dateRange = [
       '2026-03-04',
       '2026-03-05',
       '2026-03-06',
@@ -106,28 +84,26 @@ describe('filterWeekDeliveries', () => {
       '2026-03-08',
     ]
     const deliveryDates = ['2026-03-10', '2026-03-11']
-    const result = filterWeekDeliveries(deliveryDates, weekISO)
+    const result = filterDeliveries(deliveryDates, dateRange)
     assert.deepEqual(result, [])
   })
 
-  test('returns all delivery dates when all fall within the week', () => {
-    const weekISO = [
-      '2026-03-02',
-      '2026-03-03',
+  test('returns all delivery dates when all fall within the range', () => {
+    const dateRange = [
       '2026-03-04',
       '2026-03-05',
       '2026-03-06',
       '2026-03-07',
       '2026-03-08',
     ]
-    const deliveryDates = ['2026-03-03', '2026-03-05', '2026-03-07']
-    const result = filterWeekDeliveries(deliveryDates, weekISO)
-    assert.deepEqual(result, ['2026-03-03', '2026-03-05', '2026-03-07'])
+    const deliveryDates = ['2026-03-05', '2026-03-07']
+    const result = filterDeliveries(deliveryDates, dateRange)
+    assert.deepEqual(result, ['2026-03-05', '2026-03-07'])
   })
 
   test('returns empty array when delivery dates is empty', () => {
-    const weekISO = ['2026-03-02', '2026-03-03', '2026-03-04', '2026-03-05', '2026-03-06', '2026-03-07', '2026-03-08']
-    const result = filterWeekDeliveries([], weekISO)
+    const dateRange = ['2026-03-04', '2026-03-05', '2026-03-06', '2026-03-07', '2026-03-08']
+    const result = filterDeliveries([], dateRange)
     assert.deepEqual(result, [])
   })
 })

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { DeliverySchema } from '@/lib/get-delivery-dates'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 86400
 
 export async function GET(request: NextRequest) {
   const postalCode = request.nextUrl.searchParams.get('postalCode')
@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
   try {
     const res = await fetch(
       `https://www.posti.fi/maildelivery-api-proxy/?q=${postalCode}`,
-      { cache: 'no-store' }
+      { next: { revalidate: 86400 } }
     )
 
     if (!res.ok) {

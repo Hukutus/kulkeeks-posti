@@ -16,7 +16,7 @@ export async function getDeliveryDates(postalCode: string): Promise<
   try {
     const res = await fetch(
       `https://www.posti.fi/maildelivery-api-proxy/?q=${postalCode}`,
-      { cache: 'no-store' }
+      { next: { revalidate: 86400 } }
     )
     if (!res.ok) {
       return { success: false, error: `Posti API error: ${res.status}` }
