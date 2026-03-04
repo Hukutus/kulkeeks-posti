@@ -110,7 +110,7 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
   const lastDate = deliveryDates.length > 0
     ? deliveryDates[deliveryDates.length - 1]
     : todayISO
-  const dateRange = getDateRange(todayISO, lastDate)
+  const dateRange = getDateRange(todayISO, lastDate, 10)
   const weekDeliveries = filterDeliveries(deliveryDates, dateRange)
   const weekDeliverySet = new Set(weekDeliveries)
 
