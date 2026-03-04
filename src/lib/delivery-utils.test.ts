@@ -108,6 +108,39 @@ describe('filterDeliveries', () => {
   })
 })
 
+describe('getDateRange with maxDays', () => {
+  test('returns 17 days when no maxDays given and range spans 17 days', () => {
+    const result = getDateRange('2026-03-04', '2026-03-20')
+    assert.equal(result.length, 17)
+    assert.equal(result[0], '2026-03-04')
+    assert.equal(result[16], '2026-03-20')
+  })
+
+  test('returns exactly 10 days when maxDays=10 and range is 17 days', () => {
+    const result = getDateRange('2026-03-04', '2026-03-20', 10)
+    assert.equal(result.length, 10)
+    assert.equal(result[0], '2026-03-04')
+    assert.equal(result[9], '2026-03-13')
+  })
+
+  test('returns 3 days when maxDays=10 and range is only 3 days', () => {
+    const result = getDateRange('2026-03-04', '2026-03-06', 10)
+    assert.equal(result.length, 3)
+    assert.deepEqual(result, ['2026-03-04', '2026-03-05', '2026-03-06'])
+  })
+
+  test('returns 1 day when maxDays=10 and start equals end', () => {
+    const result = getDateRange('2026-03-04', '2026-03-04', 10)
+    assert.equal(result.length, 1)
+    assert.deepEqual(result, ['2026-03-04'])
+  })
+
+  test('returns [startISO] when end is before start, even with maxDays', () => {
+    const result = getDateRange('2026-03-04', '2026-03-03', 10)
+    assert.deepEqual(result, ['2026-03-04'])
+  })
+})
+
 describe('isDeliveryDay', () => {
   test('returns true when todayISO is in the delivery dates array', () => {
     const result = isDeliveryDay(['2026-03-03', '2026-03-04'], '2026-03-03')

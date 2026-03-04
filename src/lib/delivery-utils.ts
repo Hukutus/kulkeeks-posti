@@ -23,8 +23,9 @@ export function getTodayISO(): string {
  * If endISO is before startISO, returns just [startISO].
  * @param startISO - Start date as YYYY-MM-DD string
  * @param endISO - End date as YYYY-MM-DD string
+ * @param maxDays - Optional maximum number of days to return. If provided, the result is capped at this length.
  */
-export function getDateRange(startISO: string, endISO: string): string[] {
+export function getDateRange(startISO: string, endISO: string, maxDays?: number): string[] {
   const startMidnight = new Date(`${startISO}T00:00:00Z`)
   const endMidnight = new Date(`${endISO}T00:00:00Z`)
 
@@ -41,6 +42,10 @@ export function getDateRange(startISO: string, endISO: string): string[] {
     const day = String(current.getUTCDate()).padStart(2, '0')
     dates.push(`${year}-${month}-${day}`)
     current.setUTCDate(current.getUTCDate() + 1)
+  }
+
+  if (maxDays !== undefined && dates.length > maxDays) {
+    return dates.slice(0, maxDays)
   }
 
   return dates
