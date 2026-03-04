@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 import { useTranslations, useFormatter } from 'next-intl'
 import {
   getTodayISO,
-  getCurrentWeekISO,
-  filterWeekDeliveries,
+  getDateRange,
+  filterDeliveries,
   isDeliveryDay,
 } from '@/lib/delivery-utils'
 import content from '../../content.json'
@@ -62,7 +62,6 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
   }, [postalCode])
 
   const todayISO = getTodayISO()
-  const weekISO = getCurrentWeekISO()
 
   if (loading) {
     return (
@@ -107,7 +106,11 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
 
   const { deliveryDates } = deliveryData!
   const deliveryToday = isDeliveryDay(deliveryDates, todayISO)
-  const weekDeliveries = filterWeekDeliveries(deliveryDates, weekISO)
+  const lastDate = deliveryDates.length > 0
+    ? deliveryDates[deliveryDates.length - 1]
+    : todayISO
+  const dateRange = getDateRange(todayISO, lastDate)
+  const weekDeliveries = filterDeliveries(deliveryDates, dateRange)
   const weekDeliverySet = new Set(weekDeliveries)
 
   const answerColor = deliveryToday
@@ -140,7 +143,7 @@ export default function DeliveryDisplay({ postalCode, onChangeCode }: Props) {
           {t('weekTitle')}
         </h2>
         <ul className="space-y-0">
-          {weekISO.map((iso) => {
+          {dateRange.map((iso) => {
             const isDelivery = weekDeliverySet.has(iso)
             const isToday = iso === todayISO
             const dateLabel = format.dateTime(new Date(iso + 'T12:00:00'), {

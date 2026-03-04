@@ -7,7 +7,7 @@
   },
   "Delivery": {
     "errorTitle": "Could not check delivery",
-    "weekTitle": "This week",
+    "weekTitle": "Upcoming",
     "postalCode": "Postal code",
     "yes": "Yes",
     "no": "No",

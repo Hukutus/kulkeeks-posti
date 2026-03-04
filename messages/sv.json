@@ -7,7 +7,7 @@
   },
   "Delivery": {
     "errorTitle": "Kunde inte kontrollera utdelning",
-    "weekTitle": "Denna vecka",
+    "weekTitle": "Kommande",
     "postalCode": "Postnummer",
     "yes": "Ja",
     "no": "Nej",
